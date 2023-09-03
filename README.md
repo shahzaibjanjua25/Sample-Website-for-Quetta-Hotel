@@ -1,12 +1,12 @@
 # Sample Quetta Hotel - Responsive HTML5 Website
 
-![Live Dinner Restaurant Logo](images/logo.png)
+![Live Dinner Restaurant Logo](images/OIP.png)
 
 This repository contains the HTML and CSS source code for the Live Dinner Restaurant website template. This template is responsive and suitable for restaurant websites.
 
 ![Screenshot](Queeta%1.png)
 ![Screenshot](Queeta%2.png)
-![Screenshot](Queeta%3.png)
+![Screenshot](Quetta%3.png)
 
 ## Table of Contents
 
