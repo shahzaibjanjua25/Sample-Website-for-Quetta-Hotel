@@ -4,7 +4,7 @@
 
 This repository contains the HTML and CSS source code for the Live Dinner Restaurant website template. This template is responsive and suitable for restaurant websites.
 
-![Screenshot](Queeta.png)
+![Screenshot](Queeta%1.png)
 ![Screenshot](Queeta%2.png)
 ![Screenshot](Queeta%3.png)
 
