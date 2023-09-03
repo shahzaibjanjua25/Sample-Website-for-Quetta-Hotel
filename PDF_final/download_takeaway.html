@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Invoice for Banquet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+	*{
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  color: #555555;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-family: SourceSansPro;
+}
+
+header {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#logo {
+  float: left;
+  margin-top: 8px;
+}
+
+#logo img {
+  height: 84px;
+}
+
+#company {
+  float: right;
+  text-align: right;
+}
+
+
+#details {
+  margin-bottom: 50px;
+}
+
+#client {
+  padding-left: 6px;
+  border-left: 6px solid #b13476;
+  float: left;
+}
+
+#client .to {
+  color: #777777;
+}
+
+h2.name {
+  font-size: 1.4em;
+  font-weight: bolder;
+  margin: 0;
+  color:#b13476;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+}
+
+#invoice h1 {
+  color: #b13476;
+  font-size: 2.4em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 0  0 10px 0;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+#invoice .booking {
+  font-size: 1.1em;
+  color: #777777;
+  font-weight: bold;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table th,
+table td {
+  padding: 20px;
+  background: #EEEEEE;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+table th {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+table td {
+  text-align: right;
+}
+
+table td h3{
+  color: #b13476;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+}
+
+table .no {
+  color: #FFFFFF;
+  font-size: 1.6em;
+  background: #b13476;
+}
+
+table .desc {
+  text-align: left;
+  width: 900px;
+}
+
+table .unit {
+  background: #DDDDDD;
+}
+
+table .total {
+  background: #b13476;
+  color: #FFFFFF;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+table tbody tr:last-child td {
+  border: none;
+}
+
+table tfoot td {
+  padding: 10px 20px;
+  background: #FFFFFF;
+  border-bottom: none;
+  font-size: 1.2em;
+  white-space: nowrap;
+  border-top: 1px solid #AAAAAA;
+}
+
+table tfoot tr:first-child td {
+  border-top: none;
+}
+
+table tfoot tr:last-child td {
+  color: #b13476;
+  font-size: 1.4em;
+  border-top: 1px solid #b13476;
+
+}
+
+table tfoot tr td:first-child {
+  border: none;
+}
+
+#thanks{
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+#notices{
+  padding-left: 6px;
+  border-left: 6px solid #b13476;
+}
+
+#notices .notice {
+  font-size: 1.2em;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <button onclick="test()">Generate PDF</button>
+
+    <!-- Div to capture. -->
+    <div id="root">
+        <header class="clearfix">
+            <div id="logo">
+         
+                <img src="images/logo-y.jpg" alt="" style="width: 100px; height: auto;">
+            
+            
+            </div>
+            <div id="company">
+                <h2 class="name">Quetta Restaurant & Banquet</h2>
+                <div>Rawalpindi, Pakistan<br>Rawalpindi Pakistan</div>
+                <div><a href="tel:+92123345678">+92123345678, </a><a href="tel:+92127645678">+92127645678</a></div>
+                <div><a href="QuettaRestraunt.com">QuettaRestraunt.com</a></div>
+            </div>
+        </header>
+        <main>
+            <div id="details" class="clearfix">
+                <div id="client">
+                    <div class="to">INVOICE TO:</div>
+                    <h2 class="name">Moin Ali</h2>
+                    <div class="address">B/201, High Rise Tower, Paldi</div>
+                    <div class="email"><a href="mailto:moinali@gmail.com">moinali@gmail.com</a></div>
+                </div>
+                <div id="invoice">
+                    <h1>Food Takeaway</h1>
+                    <div class="date">Date of Invoice: 29/09/2020</div>
+
+                    <div class="booking">Delivery Time: 6:00 PM</div>
+                </div>
+            </div>
+
+
+            <table border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th class="no">#</th>
+                        <th class="desc">DESCRIPTION</th>
+                        <th class="unit">UNIT PRICE</th>
+                        <th class="qty">QUANTITY</th>
+                        <th class="total">TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="no">01</td>
+                        <td class="desc">
+                            <h3>Pizza</h3>Tasty dish with extra cheese
+                        </td>
+                        <td class="unit">PKR 90</td>
+                        <td class="qty">2</td>
+                        <td class="total">PKR 180</td>
+                    </tr>
+                    <tr>
+                        <td class="no">02</td>
+                        <td class="desc">
+                            <h3>Kesar Lassi</h3>Enjoy the taste of real Kesar
+                        </td>
+                        <td class="unit">PKR 40</td>
+                        <td class="qty">3</td>
+                        <td class="total">PKR 120</td>
+                    </tr>
+                    <tr>
+                        <td class="no">03</td>
+                        <td class="desc">
+                            <h3>Pav Bhaji</h3>Delicious Pav Bhaji with tasty salad
+                        </td>
+                        <td class="unit">PKR 200</td>
+                        <td class="qty">1</td>
+                        <td class="total">PKR 200</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">SUBTOTAL</td>
+                        <td>PKR 500</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">CGST 2.5%</td>
+                        <td>PKR 12.5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">SGST 2.5%</td>
+                        <td>PKR 12.5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2">GRAND TOTAL</td>
+                        <td>PKR 525</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div id="thanks">Thank you for the order!</div>
+            <div id="notices">
+                <div>NOTICE:</div>
+                <div class="notice">This invoice is the digital proof of your booking. Please show this for verification. <br><span style="color:#a1a1a1;">This Invoice was created on a computer and is valid without the signature and seal.</span>
+                </div>
+            </div>
+        </main>
+    </div>
+<script>
+     function test() {
+            // Get the element.
+            var element = document.getElementById('root');
+
+            // Generate the PDF.
+            html2pdf().from(element).set({
+                margin: 0.5,
+                filename: 'test.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'in', format: 'A4', compressPDF: true }
+            }).save();
+        }
+</script>
+</body>
+
+</html>
